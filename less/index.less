@@ -53,7 +53,149 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    height: 100%;
+h1 {
+	font-size: 1.7em;
 }
+
+h3 {
+	text-align: center;
+	margin-top: 10px; 
+}
+
+ h2, h3 { 
+	font-size: 1.35em; 
+ }
+
+ 
+
+@box:rgb(212, 236, 255);
+@background:rgb(24, 37, 48);
+@even-space:space-evenly;
+
+.flex {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: @even-space;
+}
+
+.imgsize {
+	max-width:100%;
+	max-height:100%;
+}
+
+img {
+	.imgsize();
+ }
+
+
+html, body {
+	height: 100%;
+	width:90%;
+	background: @background;
+	color: @box;
+	margin: 0 auto;
+
+	@media (max-width: 500px) {
+		width: 100%;
+		background: @background;
+	  }
+ 
+	nav {
+	margin:0 auto;
+	.flex();
+	align-content: center;
+		
+	@media (max-width: 500px) {
+		width: 100%;
+		background:@background;
+		flex-flow: column wrap;
+		justify-content: space-evenly;
+
+	  }
+	
+	
+	a {
+		text-decoration: none;
+		color: @box;
+		font-size: 1.5em;
+		margin: 10px;
+		padding: 10px;
+	}//a
+	}//nav
+
+
+ section {
+	display:flex;
+	flex-flow: column wrap;
+	justify-content: space-evenly;
+
+	@media (max-width: 500px) {
+		width: 100%;
+		background: @background;
+		flex-flow: column wrap;
+		justify-content: space-evenly;
+
+	  }
+
+		&.orange {
+			background:rgb(150, 55, 0);
+		}
+
+		&.topbd {
+			border-top: solid;
+			flex-flow: row wrap;
+		}
+
+	
+   div {
+	 width: 48%;
+	 height:300px;
+	 padding: 3%;
+
+	 @media (max-width: 500px) {
+		width: 100%;
+		background: rgb(26, 39, 45);
+		flex-flow: column wrap;
+		justify-content: space-evenly;
+
+	  }
+
+
+	 &.full {
+		width: 100%;
+	}
+
+
+	 li {
+		 border:1px solid;
+		 padding:10px 100px;
+	 }
+
+	 ul {
+		 margin-top:10px;
+	 }
+	 
+
+	 p {
+		padding:3px 10px 0px 0px;
+	 }	
+
+	 button {
+		margin-top:20px;
+		width:100px;
+		height: 60px;
+		border-radius:15px;
+		background: chocolate;
+		border: solid blue;
+
+	 }
+	
+  }//div
+ }//section
+ 
+
+ 
+}//body 
+
+
 
